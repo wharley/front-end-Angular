@@ -1,0 +1,30 @@
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <form name="form" (ngSubmit)="save()" #setor="ngForm">
+                    <div class="box-header">
+                        <div class="box-tools">
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-sm btn-success" [disabled]="!setor.form.valid"><i name="save" id="save" class="glyphicon glyphicon-ok"></i>Salvar</button>
+                                <button class="btn btn-sm btn-danger" (click)="cancel()"><i class="glyphicon glyphicon-remove"></i>Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Informe os dados</h3>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="nameSetor" name="nameSetor" class="form-control" placeholder="Informe a descrição do setor" maxlength="100" [(ngModel)]="model.descricao" #nameSetor="ngModel" required/>
+                            <span [hidden]="nameSetor.valid || nameSetor.pristine" class="alert alert-danger">descrição do setor</span>
+                        </div>
+
+                    </div>
+                    <!-- /.box -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

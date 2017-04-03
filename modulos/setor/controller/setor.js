@@ -40,7 +40,7 @@ exports.update = (req, res) => {
     model.Setor
         .update(dados, {
             where: {
-                id: req.query.id
+                id: dados.id
             }
         })
         .then((data) => {
@@ -58,7 +58,7 @@ exports.delete = (req, res) => {
     model.Setor
         .destroy({
             where: {
-                id: dados.params.id
+                id: dados.id
             }
         })
         .then((rowDeleted) => {
@@ -68,3 +68,21 @@ exports.delete = (req, res) => {
             res.send(false);
         });
 };
+
+exports.getById = (req, res) => {
+
+    const dados = req.body;
+
+    model.Setor.findAll({
+        where: {
+            id: dados.id
+        }
+    }).then((data) => {
+
+        res.send(data);
+
+    }).catch((error) => {
+        console.log(error);
+        res.send({ "data": 0 });
+    });
+}

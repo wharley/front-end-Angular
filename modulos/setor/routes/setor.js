@@ -9,5 +9,7 @@ router.get('/listSetor', controller.read);
 router.post('/saveSetor', controller.insert);
 router.post('/updateSetor', controller.update);
 router.post('/deleteSetor', controller.delete);
+//acrescentado
+router.post('/byIdSetor', controller.getById);
 
 module.exports = router;

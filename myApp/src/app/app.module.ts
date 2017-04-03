@@ -8,16 +8,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SetorComponent } from './setor/setor.component';
 import { SetorService } from './setor/setor.service';
+import { ManutencaoComponent } from './setor/manutencao/manutencao.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoService } from './produto/produto.service';
+import { ManutencaoProdutoComponent } from './produto/manutencao/manutencao.component';
 
 const appRoutes: Routes = [
   { path: 'app-setor', component: SetorComponent },
+  { path: 'app-manutencao', component: ManutencaoComponent },
+  { path: 'app-produto', component: ProdutoComponent },
+  { path: 'app-manutencao-produto', component: ManutencaoProdutoComponent },
   { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SetorComponent
+    SetorComponent,
+    ManutencaoComponent,
+    ProdutoComponent,
+    ManutencaoProdutoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +35,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [SetorService],
+  providers: [SetorService, ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
