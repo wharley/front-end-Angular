@@ -30,11 +30,11 @@ export class ProdutoComponent implements OnInit {
   }
 
   addProduto() {
-    this.router.navigate(['/app-manutencao'])
+    this.router.navigate(['/app-manutencao-produto'])
   }
 
   editProduto(produto) {
-      this.router.navigate(['/app-manutencao', {id: produto.id}])
+      this.router.navigate(['/app-manutencao-produto', {id: produto.id}])
   }
 
   delProduto(produto) {

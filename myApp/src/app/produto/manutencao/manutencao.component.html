@@ -1,3 +1,42 @@
-<p>
-  manutencao works!
-</p>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <form (ngSubmit)="save()" #produtoForm="ngForm">
+                    <div class="box-header">
+                        <div class="box-tools">
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-sm btn-success" [disabled]="!produtoForm.form.valid"><i name="save" id="save" class="glyphicon glyphicon-ok"></i>Salvar</button>
+                                <button class="btn btn-sm btn-danger" (click)="cancel()"><i class="glyphicon glyphicon-remove"></i>Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Informe os dados</h3>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="descricao" name="descricao" class="form-control" placeholder="Informe a descrição do produto" maxlength="100" [(ngModel)]="model.descricao" #descricao="ngModel" required/>
+                            <div [hidden]="descricao.valid || descricao.pristine" class="alert alert-danger">Descrição do produto</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="barra" name="barra" class="form-control" placeholder="Informe o código de barras" maxlength="14" [(ngModel)]="model.barra" #barra="ngModel" required/>
+                            <div [hidden]="barra.valid || barra.pristine" class="alert alert-danger">Código de barras</div>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" id="setor" required [(ngModel)]="model.id_setor" name="setor" #setor="ngModel">
+                                    <option *ngFor="let setor of setores" [value]="setor.id">{{setor.descricao}}</option>
+                            </select>
+                            <div [hidden]="setor.valid || setor.pristine" class="alert alert-danger">Setor</div>
+                        </div>
+
+                    </div>
+                    <!-- /.box -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

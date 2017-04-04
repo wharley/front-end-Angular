@@ -9,5 +9,7 @@ router.get('/listProduto', controller.read);
 router.post('/saveProduto', controller.insert);
 router.post('/updateProduto', controller.update);
 router.post('/deleteProduto', controller.delete);
+//acrescentado
+router.post('/byIdProduto', controller.getById);
 
 module.exports = router;

@@ -13,6 +13,11 @@ export class ProdutoService {
 
   constructor(private http: Http) { }
 
+  getSetorProduto() {
+      return this.http.get('/listSetor')
+                      .map(response => response.json())
+  }  
+
   getProduto() {
       return this.http.get('/listProduto')
                       .map(response => response.json())

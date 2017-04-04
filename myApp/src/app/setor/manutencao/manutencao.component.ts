@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription, Observable } from 'rxjs/Rx';
-import { FormBuilder, Validators } from '@angular/forms';
 
 import { SetorService } from '../setor.service';
 import { Setor } from '../setor';
