@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription, Observable } from 'rxjs/Rx';
 
 import { ProdutoService } from '../produto.service';
+import { SetorService } from '../../setor/setor.service';
 import { Produto } from '../produto';
 import { Setor } from '../../setor/setor'
 
@@ -20,7 +21,7 @@ export class ManutencaoProdutoComponent implements OnInit {
   private subscription: Subscription;
   private errorMessage: string;    
 
-  constructor(private service: ProdutoService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: ProdutoService, private setorService: SetorService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.model = new Produto();
@@ -44,7 +45,7 @@ export class ManutencaoProdutoComponent implements OnInit {
 
   onGetSetores() {
       
-    return this.service.getSetorProduto()
+    return this.setorService.getSetor()
                   .subscribe(data => this.setores = data,
                   error => this.errorMessage = <any>error);    
   }
