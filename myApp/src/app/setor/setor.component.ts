@@ -37,14 +37,14 @@ export class SetorComponent implements OnInit {
   }
 
   delSetor(setor) {
-     if (confirm("Deseja excluir o setor " + setor.id + "?")) {
+     if (confirm(`Deseja excluir o setor ${setor.id} ?`)) {
         this.service.delSetor(setor)
                 .subscribe(data => {
                     if(data){
-                        alert("Registro excluído com sucesso")
+                        alert('Registro excluído com sucesso')
                         this.onLoad()
                     }else{
-                        alert("Registro nao foi excluído")
+                        alert('Registro nao foi excluído')
                     }                    
                 }, error => this.errorMessage = <any>error)
     }

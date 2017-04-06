@@ -52,8 +52,8 @@ export class ManutencaoProdutoComponent implements OnInit {
 
   save() {
 
-    let alerta = "Registro gravado com sucesso!";
-    let alError = "Verificar os dados, não foi gravado";
+    let alerta = 'Registro gravado com sucesso!';
+    let alError = 'Verificar os dados, não foi gravado';
 
     if(this.isNew){
         this.service.saveProduto(this.model)

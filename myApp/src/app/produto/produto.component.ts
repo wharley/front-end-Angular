@@ -38,14 +38,14 @@ export class ProdutoComponent implements OnInit {
   }
 
   delProduto(produto) {
-     if (confirm("Deseja excluir o setor " + produto.id + "?")) {
+     if (confirm(`Deseja excluir o setor ${produto.id} ?`)) {
         this.service.delProduto(produto)
                 .subscribe(data => {
                     if(data){
-                        alert("Registro excluído com sucesso")
+                        alert('Registro excluído com sucesso')
                         this.onLoad()
                     }else{
-                        alert("Registro nao foi excluído")
+                        alert('Registro nao foi excluído')
                     }                    
                 }, error => this.errorMessage = <any>error)
     }

@@ -40,8 +40,8 @@ export class ManutencaoComponent implements OnInit {
 
   save() {
 
-    let alerta = "Registro gravado com sucesso!";
-    let alError = "Verificar os dados, não foi gravado";
+    let alerta = 'Registro gravado com sucesso!';
+    let alError = 'Verificar os dados, não foi gravado';
 
     if(this.isNew){
         this.service.saveSetor(this.model)
